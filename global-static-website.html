@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Static Website - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px auto;
+            max-width: 900px;
+            line-height: 1.6;
+            color: #333;
+            background-color: white;
+        }
+        h1 {
+            border-bottom: 3px solid #222;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 40px;
+            color: #222;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        .highlight {
+            background: #f5f5f5;
+            padding: 15px;
+            border-left: 4px solid #333;
+            margin: 15px 0 20px 0;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .footer {
+            margin-top: 60px;
+            font-size: 14px;
+            color: #777;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Global Static Website</h1>
+
+    <p>
+        A globally distributed static website built on AWS that leverages a 
+        Content Delivery Network (CDN) for sub-second latency and automated CI/CD for zero-touch 
+        deployments. This architecture ensures high availability through geographic data redundancy.
+    </p>
+
+    <h2>Project Objective</h2>
+    <div class="section">
+        <p>
+            To design a high-performance web hosting solution that utilizes edge caching for global 
+            speed, enforces mandatory HTTPS for security, and implements cross-region replication 
+            to ensure 99.99% data durability.
+        </p>
+    </div>
+
+    <h2>Architecture Flow</h2>
+    <div class="highlight">
+        GitHub (Source) → AWS CodePipeline (CI/CD) → Amazon S3 (Origin) → Amazon CloudFront (Global CDN)
+    </div>
+
+    <ul>
+        <li><strong>Automated Deployment:</strong> Every Git push triggers a pipeline that automatically updates the primary S3 bucket.</li>
+        <li><strong>Edge Acceleration:</strong> CloudFront caches content at 400+ locations worldwide, serving users from the node closest to them.</li>
+        <li><strong>Secure Delivery:</strong> SSL/TLS termination at the edge ensures all traffic is encrypted via HTTPS using AWS Certificate Manager.</li>
+        <li><strong>Geographic Redundancy:</strong> S3 Cross-Region Replication (CRR) maintains a live, synchronized backup in a secondary AWS region.</li>
+    </ul>
+
+    <h2>Technical Highlights</h2>
+    <ul>
+        <li><strong>SSL Termination:</strong> Offloaded encryption overhead to the CDN edge, reducing handshake latency for global visitors.</li>
+        <li><strong>Cache Invalidation:</strong> Configured automatic cache purging to ensure users receive the latest site updates immediately after deployment.</li>
+        <li><strong>Disaster Recovery:</strong> Engineered a multi-region architecture to protect against regional AWS outages.</li>
+        <li><strong>CI/CD Optimization:</strong> Implemented automatic artifact extraction to streamline the flow from GitHub to S3 storage.</li>
+    </ul>
+
+    <h2>Project Repository</h2>
+    <p>
+        <a href="https://github.com/Olabadmanji/cloud-devops/tree/main/Global%20Static%20Website" target="_blank">
+            View Full Source Code & Implementation Details on GitHub →
+        </a>
+    </p>
+
+    <div class="footer">
+        Built by Olabanji | Cloud & DevOps Engineer <br><br>
+        <a href="https://olabadmanji.github.io/cloud-devops/">← Back to portfolio</a>
+    </div>
+
+</body>
+</html>
